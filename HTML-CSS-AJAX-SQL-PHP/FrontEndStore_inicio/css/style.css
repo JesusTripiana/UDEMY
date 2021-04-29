@@ -2,7 +2,7 @@
     --primario: #9C27B0;
     --primarioOscuro: #89119D;
     --secundario: #FFCE00;
-    --secundarioOscuro: rgb(233,287,2);
+    --secundarioOscuro: rgb(233, 187, 2);
     --blanco: #FFF;
     --negro: #000;
 
@@ -37,7 +37,8 @@ a {
 }
 
 img {
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 100%;
 }
 
 .contenedor {
@@ -122,9 +123,9 @@ h3 {
     padding: 1rem;
 
 }
-.producto__imagen {
+/* .producto__imagen {
     width: 100%;
-}
+} */
 .producto__nombre {
     font-size: 4rem;
 }
@@ -178,7 +179,7 @@ h3 {
 }
 .nosotros__imagen{
     grid-row: 1 / 2;
-    width: 100%;
+    /* width: 100%; */
 }
 @media (min-width:768px){
     .nosotros__imagen{
@@ -192,9 +193,81 @@ h3 {
     grid-template-columns: repeat( 2 , 1fr );
     gap: 2rem; /* Este GAP genera el espaciado en las columnas y en las filas, si no se desea así hay que especificar column o row */
 }
+@media (min-width:768px){
+    .bloques{
+        grid-template-columns: repeat( 4 , 1fr );
+         }
+}
 .bloque{
     text-align: center;
 }
+/* .bloque__imagen{
+    width: 100%;
+} */
 .bloque__titulo{
     margin: 0;
+}
+
+/* ---- PÁGINA DEL PRODUCTO ---- */
+
+.camisa{
+    text-align: center;
+    
+}
+
+@media (min-width:768px){
+    .camisa{ 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        column-gap: 2rem;
+        text-align: left;
+    }
+}
+
+ .formulario{
+    display: flex;
+    flex-direction: column;
+} 
+.formulario__campo{
+   /*
+   Estas 3 lineas hacen lo mismo que la descomentada que esta simplificada debajo del comentario
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid; 
+    */
+    border: 1rem solid var(--primarioOscuro);
+
+    background-color: transparent; /* TRANSPARENT hace transparente el fondo */
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    margin-top: 1rem;
+    appearance: none; /* ELIMINA la flecha de la etiqueta SELECT */
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--FuentePrincipal);
+    padding: 2rem;
+
+    /* TRANSITION hace transiciones entre distintos valores de la clase - 1º valor(atributo modificador) - 2º valor(tiempo de transición)- 3º valor(forma de hacer la transici'on)) */
+    transition: background-color .5s ease;
+}
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+@media (min-width:768px){
+    .formulario{      
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .formulario__submit{
+        grid-column: 1 / 3;
+    }
 }

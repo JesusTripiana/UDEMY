@@ -22,143 +22,31 @@
         <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
     </nav>
     <main class="contenedor">
-        <h1>Producto</h1>
+        <h1>VueJS</h1>
 
-        <div class="grid">
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/1.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">VueJS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/2.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">AngularJS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/3.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">ReacJS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/4.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">Redux</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/5.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">Node.JS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/6.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">SASS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/7.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">HTML5</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/8.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">GitHub</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/9.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">BulmaCSS</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/10.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">TypeScrip</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/11.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">Drupal</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/12.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">JavaScript</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/13.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">GrapQL</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img  class="producto__imagen" src="img/14.jpg" alt="imagen camisa">
-                    <div class="producto__informacion">
-                        <p class="producto__nombre">WordPress</p>
-                        <p class="producto__precio">25€</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="grafico grafico--camisas"></div>
-            <div class="grafico grafico--node"></div>
-        </div><!-- .grid -->
+        <div class="camisa" >
+            <img class="camisa__imagen" src="img/1.jpg" alt="Imagen Producto">
+            <div class="camisa__contenido" >
+                <p>Quisque gravida tortor at ultricies tincidunt. Aliquam eget auctor massa, 
+                    ac congue elit. Nullam eu posuere eros.
+                </p>
+                <form class="formulario">
+                    <select class="formulario__campo">
+                        <option disabled selected>-- Seleccione Talla --</option> <!-- Los atributos indican que esta opción esta desabilitada y seleccionada de forma inicial-->
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+                    <input class="formulario__submit" type="submit" value="Agregar al Carrito">
+                </form> 
+            </div>
+        </div> <!-- . camisa-->
     </main>
 
     <footer class="footer">
         <p class="footer__texto">Front End Store - Todos los derechos Reservados 2021.</p>
-    </footer>
-    
+    </footer>   
 </body>
 </html>
