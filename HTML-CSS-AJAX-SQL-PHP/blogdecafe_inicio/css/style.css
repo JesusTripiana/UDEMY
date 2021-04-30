@@ -72,5 +72,45 @@ img{
     color: var(--blanco);
     margin-top: 5rem;
     text-align: center;
+}
+@media(min-width:768px){
+    .header__texto{
+        margin-top: 15rem;
+    }
 
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.logo{
+    color: var(--blanco);
+}
+.logo__nombre{
+    font-weight: 400; /* 400 es lo mismo que poner NORMAL */
+}
+.logo__bold{
+    font-weight: 700; /* 700 es lo mismo que poner BOLD */
+}
+@media (min-width: 768px){
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+}
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    font-size: 1.8rem;
+}
+
+/*   CONTENIDO PRINCIPAL */
+@media (min-width: 768px){
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        column-gap: 4rem;
+    }
 }
