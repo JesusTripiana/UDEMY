@@ -169,15 +169,19 @@ padding: 1rem 3rem;
     border-bottom: none;
     margin-bottom: 0;
 }
-.widget-curso__label{
+.widget-curso__label,
+.curso__label{
     font-family: var(--fuenteHeading);
     font-weight: 700;
 }
-.widget-curso__info{
+.widget-curso__info,
+.curso__info{
     font-weight: 400;  /* Tener en cuenta 400=normal y 700=bold */
 }
 .widget-curso__label,
-.widget-curso__info{
+.widget-curso__info,
+.curso__info,
+.curso__label{
     font-size: 2rem;
 }
 
@@ -187,3 +191,33 @@ padding: 1rem 3rem;
     padding-bottom: 3rem;
     margin-top: 4rem;
 }
+
+/* SOBRE NOSOTROS */
+
+@media (min-width: 768px){
+     .sobre-nosotros{
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 2rem;
+
+     }
+}
+
+/*   PÁGINA CURSOS    (Más CLASES de curso en la parte de CURSOS más arriba)*/
+
+.curso{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+@media (min-width: 768px){
+     .curso{
+         display:grid;
+         grid-template-columns: 1fr 2fr;
+         column-gap: 2rem;
+     }
+}
+.curso:last-of-type{
+    border-bottom: none;
+}
+
+/* PÁGINA CONTACTO */
