@@ -1,0 +1,26 @@
+.header{
+    background-color: $verde;
+
+    .contenido-header{
+        padding: $separacion / 2 0; /* divide entre 2 la separación establecida en VARIABLES */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1{
+        color: $blanco;
+    }
+}
+.navegacion-principal{
+    display: flex;
+    gap: 2rem;
+
+    a{
+      color: $blanco;
+      font-size: 2rem;
+      /* & hace que no se duplique en la hoja de estilos A A:hover y compile solo A:hover */
+      &:hover{
+          color: $amarillo;
+      }
+    }
+}

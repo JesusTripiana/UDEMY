@@ -1,0 +1,27 @@
+/* Para enlazar y que no se compile un archivo -- indicar _ al principio del nombre del archivo deseado como aparece en este */
+
+// Archivo de VARIABLES
+
+$fuentePrincipal : 'Montserrat', sans-serif;
+
+
+// COLORES
+$verde: #4CB8B3;
+$rosa: #F53756;
+$amarillo: #FEF46D;
+$morado: #752F97;
+$negro: #000;
+$blanco: #FFF;
+
+//  MEDIAQUERY
+
+
+//  FUENTES       -- Son los px que hacen aparecer a 1 fuente u otra de las importadas en el proyecto
+$delgada: 300;
+$regular: 400;
+$bold: 700;
+$black: 900;
+
+//  SEPARACIONES
+$separacion: 5rem;
+
