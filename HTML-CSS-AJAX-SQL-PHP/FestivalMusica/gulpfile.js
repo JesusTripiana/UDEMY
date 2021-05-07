@@ -1,33 +1,60 @@
-/* En este fichero se compone de funciones JavaScript para GULP */
+/* En este fichero se compone de funciones JavaScript para GULP   --  comandos terminal => npm i --save-dev "nombre de extensión" (palabras después del require)*/
 const { series, src, dest, watch } = require('gulp');
 const sass = require('gulp-sass');
+const imagemin = require('gulp-imagemin');
+const notify = require('gulp-notify');
+const webp = require('gulp-webp');
 
-// Función que compila SASS
+// Constante con RUTAS relativas 
+const paths = {
+    imagenes: "src/img/**/*",
+    scss:"src/scss/**/*.scss"
+}
 
 function css( ){
-    return src("src/scss/app.scss") // Ubicación de donde se encuentra el archivo SASS
-        .pipe( sass() ) // Compila el archivo SASS
+    return src(paths.scss) // Ubicación de donde se encuentra el archivo .SASS
+        .pipe( sass({
+            outputStyle: 'expanded' // Esta funcionalidad da formato al archivo css compilado (para que se vea más espaciado y mejor)
+        }) ) 
         .pipe( dest('./build/css') ) // Ubica el archivo compilado en la ubicación pasada por parámetro
 }
 
 function minificarcss(){
-    return src("src/scss/app.scss") 
+    return src(paths.scss) 
         .pipe( sass({
             outputStyle: 'compressed' // Esta funcionalidad comprime al máximo el archivo css compilado (para que ocupe el menor tamaño)
         }) ) 
         .pipe( dest('./build/css') )
 }
 
+function imagenes(){
+    /* Este metodo comprime o hace más ligeras las imagenes del proyecto */
+    return src(paths.imagenes)  // ** = todas carpetas o archivos dentro de la ubicación  y * = todos archivos da igual su extensión 
+        .pipe( imagemin())
+        .pipe( dest('./build/img'))
+        .pipe( notify({message: 'Imagen Minificada'}) ); // Notifica el procesamiento de cada imagen 
+}
+
+function versionWebp(){
+    return src(paths.imagenes)
+        .pipe( webp() )
+        .pipe( dest('./build/img'))
+        .pipe( notify({message: 'Versión WebP lista'}) );
+}
+
 function watchArchivos(){
     /* Con este metodo le indicamos que WATCH quede a la escucha de modificación del archivo en la ruta pasada por parámetro y 
     que si hay cambios, ejecute la funcion también pasada por parámetro */
 
-    watch("src/scss/**/*.scss" , css) // ** = todas carpetas o archivos con extensión indicada  y * = todos archivos carpeta actual
+    watch(paths.scss, css); // ** = todas carpetas o archivos con extensión indicada  y * = todos archivos carpeta actual con extensión .scss
 }
 exports.css = css;
 exports.minificarcss = minificarcss;
 exports.watchArchivos = watchArchivos; // Para que este a la escucha ejecutar en terminal 'gulp watchArchivos'
+exports.imagenes = imagenes;
+exports.versionWebp = versionWebp;
 
+exports.default = series(css, imagenes, versionWebp, watchArchivos); // Forma de ejecutar varias funciones solo poniendo en terminal GULP
 
 
 /* EJEMPLOS */
@@ -53,7 +80,7 @@ exports.css = css;
 exports.javascript = javascript;
 */
 
-/* De esta forma (SERIES), cuando se llame a TAREA se van a aejecutar de forma secuencial las funciones */
+/* SERIES, cuando se llame a TAREA se van a ejecutar de forma secuencial las funciones */
 /* exports.tareas = series(css, javascript, minificarHTML); */ 
 
 /* PARALLEL hace que las funciones se ejecuten a la vez y que vayan finalizando conforme vayan terminando las acciones en ellas 
